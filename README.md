@@ -40,9 +40,7 @@ pip install -r requirements.txt
 Create an Authy Application and grab your API Key
 https://www.twilio.com/console/authy/applications
 
-```
-mv config.py.sample config.py
-```
+
 
 Edit `config.py` and update the API key with your application key. Create a secret key for managing sessions.
 
