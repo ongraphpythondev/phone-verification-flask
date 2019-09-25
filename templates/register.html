@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+                <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Register</title>
+</head>
+<body>
+
+{% from "_form_macros.html" import render_field %}
+    <div class="container">
+        <div class="jumbotron">
+            <div class="user-registration m-4">
+                  <div class="page-header">
+                    <h2>Please Register Your New Account</h2>
+                  </div>
+                    <div class="form-row">
+                            <div class="col">
+                                <form action="{{ url_for('register') }}" method="post">
+                                {{ form.csrf_token }}
+                                    <dl>
+                                        {{ render_field(form.first_name, placeholder="firstname") }}
+                                        {{ render_field(form.last_name, placeholder="lastname") }}
+                                        {{ render_field(form.phone_number, placeholder="phonenumber") }}
+                                        {{ render_field(form.country_code, placeholder="countrycode") }}
+                                        {{ render_field(form.password, placeholder="Password") }}
+                                        {{ render_field(form.confirm, placeholder="Confirm password") }}
+                                    </dl>
+                                <button class="btn btn-sm btn-success" type="submit">Create New Account</button>
+                              </form>
+                         </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
